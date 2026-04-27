@@ -1,20 +1,19 @@
 name: HTML Check
 
 on:
-push:
-branches: [ "main" ]
+  push:
+    branches: ["main"]
 
 jobs:
-check-html:
-runs-on: ubuntu-latest
+  check-html:
+    runs-on: ubuntu-latest
 
-steps:
-- name: Get code
-  uses: actions/checkout@v3
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
 
-- name: Install HTML checker
-  run: npm install -g htmlhint
+      - name: Install HTML checker
+        run: npm install -g htmlhint
 
-- name: Run HTML check
-  run: htmlhint index.html
-```
+      - name: Run HTML check
+        run: htmlhint index.html
